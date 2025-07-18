@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>FOX74</title>
+  <style>
+    body {
+      background-color: #000;
+      color: #fff;
+      font-family: 'Tajawal', sans-serif;
+      margin: 0;
+      padding: 0;
+      text-align: center;
+    }
+
+    .container {
+      max-width: 500px;
+      margin: 40px auto;
+      padding: 20px;
+    }
+
+    .logo {
+      width: 110px;
+      border-radius: 50%;
+      margin-bottom: 10px;
+    }
+
+    h2 {
+      font-size: 22px;
+      margin-bottom: 25px;
+      color: #f9c302;
+    }
+
+    .alert-box {
+      background-color: #1e1e1e;
+      border: 2px solid #ffc107;
+      padding: 20px 15px;
+      border-radius: 15px;
+      box-shadow: 0 0 10px #ffc10780;
+    }
+
+    .alert-title {
+      font-size: 18px;
+      color: #ffc107;
+      margin-bottom: 15px;
+    }
+
+    .code {
+      color: #ff4d4d; /* اللون الأحمر */
+      font-weight: bold;
+      cursor: pointer;
+    }
+
+    .alert-text p {
+      font-size: 14px;
+      line-height: 1.7;
+      margin: 10px 0;
+    }
+
+    .next-btn {
+      margin-top: 20px;
+      background-color: #ffc107;
+      color: #000;
+      border: none;
+      padding: 10px 25px;
+      font-size: 16px;
+      border-radius: 30px;
+      cursor: pointer;
+      transition: background 0.3s ease;
+    }
+
+    .next-btn:hover {
+      background-color: #e0a800;
+    }
+
+    .dialog-overlay {
+      position: fixed;
+      top: 0; right: 0; bottom: 0; left: 0;
+      background: rgba(0,0,0,0.8);
+      display: none;
+      align-items: center;
+      justify-content: center;
+      z-index: 999;
+    }
+
+    .dialog-box {
+      background-color: #222;
+      border: 2px solid #ffc107;
+      border-radius: 12px;
+      padding: 25px 20px;
+      width: 85%;
+      max-width: 350px;
+      color: white;
+      text-align: center;
+      box-shadow: 0 0 20px #ffc10770;
+    }
+
+    .dialog-box h3 {
+      font-size: 18px;
+      margin-bottom: 20px;
+      color: #ffc107;
+    }
+
+    .dialog-btns {
+      display: flex;
+      justify-content: space-around;
+      margin-top: 20px;
+    }
+
+    .dialog-btns button {
+      padding: 10px 20px;
+      border: none;
+      border-radius: 8px;
+      font-size: 16px;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+
+    .yes-btn {
+      background-color: #00c853;
+      color: white;
+    }
+
+    .no-btn {
+      background-color: #d32f2f;
+      color: white;
+    }
+
+    .yes-btn:hover { background-color: #009c3f; }
+    .no-btn:hover { background-color: #b71c1c; }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <img src="vb.png" alt="شعار" class="logo" />
+    <h2>مرحباً بك في سكربت <span class="code" onclick="copyAndGo()">FOX74</span></h2>
+
+    <div class="alert-box">
+      <div class="alert-title">⚠️ تنبيه هام</div>
+      <div class="alert-text">
+        <p>يرجى العلم أنه تم ربط هذا السكربت بالبروومو كود الخاص بنا: <span class="code" onclick="copyAndGo()">FOX74</span></p>
+        <p>إذا لم تقم بالتسجيل باستخدام البرومو كود، فلن تستلم كود التفعيل، وده ممكن يسبب أخطاء ويؤدي إلى خسارة جميع أموالك.</p>
+        <p>📌 لو كنت سجلت قبل كده، تواصل معانا علشان تاخد كود التفعيل.</p>
+        <p>📌 لو ما سجلتش، شوف طريقة التسجيل وتواصل بعدها فوراً.</p>
+      </div>
+      <button class="next-btn" onclick="openDialog()">NEXT</button>
+    </div>
+  </div>
+
+  <!-- Dialog -->
+  <div class="dialog-overlay" id="dialog">
+    <div class="dialog-box">
+      <h3>هل انت مسجل معنا ب البرومو كود؟؟</h3>
+      <div class="dialog-btns">
+        <button class="yes-btn" onclick="goToNext()">نعم</button>
+        <button class="no-btn" onclick="goToTelegram()">لا</button>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    function copyAndGo() {
+      navigator.clipboard.writeText("FOX74").then(() => {
+        window.open("https://t.me/NT_TS", "_blank");
+      });
+    }
+
+    function openDialog() {
+      document.getElementById("dialog").style.display = "flex";
+    }
+
+    function goToNext() {
+      window.location.href = "next.html";
+    }
+
+    function goToTelegram() {
+      window.open("https://t.me/NT_TS", "_blank");
+    }
+  </script>
+
+</body>
+</html>
